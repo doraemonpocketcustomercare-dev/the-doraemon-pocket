@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The.Doraemon.Pocket — Small pocket, big world</title>
+  <meta name="description" content="Premium gadgets, skincare, lifestyle & home finds — curated, tested, and delivered. Small pocket, big world." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#225b8a; /* brand primary */
+      --blue-700:#1a4a72;
+      --yellow:#ffcc3f; /* accent */
+      --ink:#0e1b2a; /* text */
+      --cloud:#f5f8fb; /* bg */
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--cloud)}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+    /* Navbar */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand em{font-style:normal;color:var(--blue)}
+    .nav a.btn{padding:10px 16px;border-radius:999px;background:var(--blue);color:var(--white);font-weight:600;box-shadow:0 6px 18px rgba(34,91,138,.25)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-weight:500;opacity:.9}
+    /* Hero */
+    .hero{padding:72px 0;background:radial-gradient(1200px 400px at 70% -200px, rgba(255,204,63,.12), transparent 50%), linear-gradient(180deg, var(--white), var(--cloud))}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(34,91,138,.15);border-radius:999px;font-size:13px;color:var(--blue-700);background:#fff}
+    h1{font-size:44px;line-height:1.1;margin:14px 0 10px}
+    .lead{font-size:18px;opacity:.9}
+    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:14px;font-weight:600}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(34,91,138,.25)}
+    .btn-ghost{background:#fff;color:var(--blue);border:1px solid rgba(34,91,138,.25)}
+    /* Logo badge */
+    .badge{display:grid;place-items:center;aspect-ratio:1;border-radius:50%;background:var(--blue);box-shadow:0 16px 50px rgba(34,91,138,.35);position:relative}
+    .badge svg{width:78%;height:auto}
+    .glow{position:absolute;top:16%;left:50%;transform:translateX(-50%);width:42%;height:42%;filter:blur(10px);background:radial-gradient(circle at 50% 30%, rgba(255,204,63,.9), rgba(255,204,63,.0) 60%);opacity:.9}
+    .spark{position:absolute;width:9px;height:9px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)}
+    .s1{top:8%;left:22%}.s2{top:6%;right:28%}.s3{top:22%;right:18%}
+    .hero-note{margin-top:16px;font-size:14px;opacity:.7}
+    /* Sections */
+    section{padding:68px 0}
+    .section-title{font-size:30px;margin:0 0 8px}
+    .muted{opacity:.8}
+    .grid{display:grid;gap:18px}
+    .grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(16,34,52,.05)}
+    .card h4{margin:10px 0 6px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(34,91,138,.08);color:var(--blue);font-weight:600;font-size:13px}
+    .how{counter-reset:step}
+    .how li{list-style:none;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px 18px;margin:10px 0;display:flex;gap:14px;align-items:flex-start;box-shadow:0 6px 20px rgba(16,34,52,.05)}
+    .how li::before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .panel{background:#fff;border:1px dashed rgba(0,0,0,.12);border-radius:14px;padding:16px}
+    .panel h4{margin:6px 0 8px}
+    /* Footer */
+    footer{background:var(--ink);color:#dfe9f5;padding:36px 0;margin-top:30px}
+    footer a{color:#fff;text-decoration:underline}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .compare{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="The.Doraemon.Pocket home">
+        <span style="display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);">
+          <svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true">
+            <path fill="#fff" d="M8 18a2 2 0 0 1 2-2h44a2 2 0 0 1 2 2v8c0 15.46-12.54 28-28 28S8 41.46 8 26v-8Z"/>
+          </svg>
+        </span>
+        <span>The.<em>Doraemon</em>.Pocket</span>
+      </a>
+      <div class="nav-links">
+        <a href="#catalog">Catalog</a>
+        <a href="#how">How it works</a>
+        <a href="#contact" class="btn">Order on WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="kicker">Small pocket, big world ✨</span>
+        <h1>Curated gadgets, skincare & home finds — in one trusted pocket</h1>
+        <p class="lead">We hand‑pick premium, high‑function products and deliver them at fair prices. No flashy markups. Just quality, value, and delight.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#catalog">Browse picks</a>
+          <a class="btn btn-ghost" href="#contact">Chat & order</a>
+        </div>
+        <p class="hero-note">Proudly curated • Fast dispatch • Easy returns policy</p>
+      </div>
+      <div aria-hidden="true">
+        <!-- Circular badge with half‑circle pocket icon and items -->
+        <div class="badge" style="width:360px;margin:0 auto;">
+          <div class="glow" aria-hidden="true"></div>
+          <!-- Blue circle background already provided by .badge -->
+          <!-- White half‑circle pocket (Doraemon‑style) -->
+          <svg viewBox="0 0 200 200" role="img" aria-label="Pocket illustration">
+            <!-- pocket -->
+            <path d="M30 60 h140 v32 a70 70 0 0 1 -140 0 Z" fill="#fff" stroke="#e6ecf3" stroke-width="6" />
+            <!-- items peeking out -->
+            <g>
+              <!-- phone -->
+              <rect x="55" y="15" width="38" height="66" rx="6" fill="#0e1b2a"/>
+              <rect x="60" y="22" width="28" height="48" rx="4" fill="#dfe9f5"/>
+              <!-- skincare bottle -->
+              <rect x="98" y="18" width="24" height="64" rx="6" fill="#ffffff" stroke="#d8dee6" stroke-width="3"/>
+              <rect x="103" y="30" width="14" height="8" rx="2" fill="#eaf1f7"/>
+              <!-- headphones arc -->
+              <path d="M150 60 a24 24 0 0 0 -48 0" fill="none" stroke="#e9eef6" stroke-width="6"/>
+              <circle cx="132" cy="68" r="10" fill="#ffffff" stroke="#d8dee6" stroke-width="3"/>
+            </g>
+            <!-- sparkles -->
+            <g fill="#ffcc3f">
+              <path d="M170 30 l6 12 l12 6 l-12 6 l-6 12 l-6 -12 l-12 -6 l12 -6 Z"/>
+              <rect x="38" y="12" width="8" height="8" transform="rotate(45 42 16)"/>
+              <rect x="158" y="14" width="6" height="6" transform="rotate(45 161 17)"/>
+            </g>
+          </svg>
+          <span class="spark s1"></span>
+          <span class="spark s2"></span>
+          <span class="spark s3"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Catalog teaser -->
+  <section id="catalog">
+    <div class="container">
+      <h2 class="section-title">Signature Picks</h2>
+      <p class="muted">A tiny preview of what pops out of the pocket. Full catalog coming soon.</p>
+      <div class="grid cols-4" style="margin-top:16px">
+        <div class="card">
+          <span class="pill">⚙️ Gadget</span>
+          <h4>Mini Screwdriver Pro</h4>
+          <p class="muted">Precision toolkit with magnetic bits & USB charge case.</p>
+        </div>
+        <div class="card">
+          <span class="pill">🧴 Skincare</span>
+          <h4>HydraGlow Serum</h4>
+          <p class="muted">Fragrance‑free, dermatologist tested, glass bottle.</p>
+        </div>
+        <div class="card">
+          <span class="pill">🏠 Home</span>
+          <h4>Ambient Night Lamp</h4>
+          <p class="muted">Touch dimmer, warm glow, compact bedside design.</p>
+        </div>
+        <div class="card">
+          <span class="pill">🔌 Tech</span>
+          <h4>Fast‑Charge Cable Duo</h4>
+          <p class="muted">Type‑C & Lightning, braided, 60W rated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <ol class="how">
+        <li>
+          <div>
+            <strong>Discover</strong>
+            <div class="muted">We shortlist high‑quality, high‑function products across categories.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Compare</strong>
+            <div class="muted">Transparent specs & prices. We avoid inflated markups.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Order</strong>
+            <div class="muted">DM/WhatsApp to place your order. Safe payment options.</div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Deliver</strong>
+            <div class="muted">Packed with care and shipped quickly. Easy return policy.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Comparison / Promise -->
+  <section>
+    <div class="container compare">
+      <div class="panel">
+        <h4>Our Promise</h4>
+        <ul class="muted">
+          <li>✅ Curated, function‑first selection</li>
+          <li>✅ Fair pricing with basic margin</li>
+          <li>✅ No misleading brand claims</li>
+          <li>✅ Support + after‑sales guidance</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Why people choose us</h4>
+        <ul class="muted">
+          <li>✨ Variety: gadgets, skincare, home, lifestyle</li>
+          <li>✨ Honest quality checks</li>
+          <li>✨ Friendly assistance in simple language</li>
+          <li>✨ Community‑first deals</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Order -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Order or ask a question</h2>
+      <p class="muted">Ping us on WhatsApp or Instagram. We reply quickly.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://wa.me/YourNumber" target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn btn-ghost" href="https://instagram.com/the.doraemon.pocket" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
+      <div>© <span id="yr"></span> The.Doraemon.Pocket — Small pocket, big world.</div>
+      <div style="opacity:.8">Made with ❤️ for our community.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
